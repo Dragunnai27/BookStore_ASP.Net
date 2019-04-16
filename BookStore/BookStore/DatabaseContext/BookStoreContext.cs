@@ -9,9 +9,9 @@ using BookStore.Models;
 
 namespace BookStore.DatabaseContext
 {
-    public class DatabaseContext : DbContext
+    public class BookStoreContext : DbContext
     {
-        public DatabaseContext() : base()
+        public BookStoreContext() : base()
         {
             string databasename = "BookStoreDB";
             this.Database.Connection.ConnectionString = "Data Source=TAM\\SQLEXPRESS;Initial Catalog=" + databasename + ";Trusted_Connection=Yes";

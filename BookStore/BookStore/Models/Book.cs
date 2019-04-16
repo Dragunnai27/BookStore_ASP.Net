@@ -12,22 +12,14 @@ namespace BookStore.Models
         [Key]
         public int BookID { get; set; }
 
-        [ForeignKey("FKBookInfo")]
-        public int BookInfoID { get; set; }
-        public BookInformation FKBookInfo { get; set; }
-
         [ForeignKey("FKAccessories")]
         public int AccID { get; set; }
         public Accessories FKAccessories { get; set; }
-
-        [ForeignKey("FKOrder")]
-        public int OrderID { get; set; }
-        public Order FKOrder { get; set; }
-
 
         [Required]
         public string Name { get; set; }
         [Required]
         public float Price { get; set; }
+        public bool IsActive { get; set; }
     }
 }

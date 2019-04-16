@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BookStore.Models;
+using BookStore.DatabaseContext;
+using System.Data.Entity;
+
 
 namespace BookStore.Controllers
 {
@@ -13,6 +16,32 @@ namespace BookStore.Controllers
         {
             return View();
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Registry()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Registry(string UserName, string Password)
+        {
+            User user = new User() { UserName = UserName, Password = Password };
+            using (var db = new BookStoreContext())
+            {
+                db.TbUser.Add(user);
+                db.SaveChanges();
+                db.Dispose();
+            }
+            return View();
+        }
+
+
 
         public ActionResult About()
         {

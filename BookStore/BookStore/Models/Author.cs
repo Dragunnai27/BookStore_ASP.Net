@@ -11,9 +11,6 @@ namespace BookStore.Models
     {
         [Key]
         public int AuthorID { get; set; }
-
-        public ICollection<BookInformation> BookInfo { get; set; }
-
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }

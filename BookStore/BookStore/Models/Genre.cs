@@ -10,9 +10,6 @@ namespace BookStore.Models
     {
         [Key]
         public int GenreID { get; set; }
-
-        ICollection<BookInformation> BookInfo { get; set; }
-
         [Required]
         public string Name { get; set; }
     }

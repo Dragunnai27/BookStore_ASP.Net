@@ -11,8 +11,6 @@ namespace BookStore.Models
         [Key]
         public int PublisherID { get; set; }
 
-        ICollection<BookInformation> BookInfo { get; set; }
-
         public string Name { get; set; }
         [Phone]
         public int Phone { get; set; }

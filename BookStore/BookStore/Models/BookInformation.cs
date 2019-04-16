@@ -13,14 +13,9 @@ namespace BookStore.Models
         [Key]
         public int BookInfoID { get; set; }
 
-        // Many comment
-        public ICollection<Comment> Comments { get; set; }
-        // Many author
-        public ICollection<Author> Authors { get; set; }
-        // Many publisher
-        public ICollection<Publisher> Publishers { get; set; }
-        // Many Genre
-        public ICollection<Genre> Genres { get; set; }
+        [ForeignKey("FKBook")]
+        public int BookID { get; set; }
+        public Book FKBook { get; set; }
 
         [Required]
         public int ISBN { get; set; }

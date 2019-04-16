@@ -8,9 +8,11 @@ namespace BookStore.Models
 {
     public class BookInformation_Author
     {
+        [Key]
+        public int ID { get; set; }
+
         public int AuthorID { get; set; }
         public virtual Author Author { get; set; }
-
         public int BookInfoID { get; set; }
         public virtual BookInformation BookInformation { get; set; }
     }
